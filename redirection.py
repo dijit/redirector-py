@@ -23,7 +23,8 @@ def handler(request):
     raise rivr.Http404('Hostname not found in DB')
 
 app = rivr.MiddlewareController.wrap(router,
-        rivr.TemplateMiddleware(template_dirs = ['./']))
+        rivr.TemplateMiddleware(template_dirs = ['./'])
+        )
 
 
 wsgi = WSGIHandler(app)
